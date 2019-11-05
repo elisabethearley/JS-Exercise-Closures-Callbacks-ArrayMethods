@@ -160,8 +160,10 @@ function processContains(item, list, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  const duplicateFree = [...new Set(list)];
+  return callback(duplicateFree);
 }
+// * Set removes duplicates from an array. Could also use .filter or .forEach. *
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
