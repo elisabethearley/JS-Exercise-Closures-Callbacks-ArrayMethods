@@ -185,9 +185,12 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
   const runnerFullName = [];
-  runners.forEach(runner => {runnerFullName.push(`${runner.last_name}, ${runner.first_name}`)});
+  runners.forEach(runner => {
+    runnerFullName.push(`${runner.last_name}, ${runner.first_name}`)});
   return runnerFullName;
 }
+// "runner.last-name" + "," + "runner.first_name";
+
 // function getFullNames(runners) {
 //   const runnerFullName = [];
 //   runners.forEach(function runner() {
@@ -268,9 +271,9 @@ function counterMaker() {
   // function counter() {
   //   ++count
   // }
-  let count = 0 - 1;
+  let count = 0;
   function counter() {
-    return ++count;
+    return count++;
   }
   return counter;
   // BROKEN CODE ENDS
@@ -297,12 +300,12 @@ function counterMaker() {
  * etc
 */
 function counterMakerWithLimit(max_value) {
-  let count = 0 - 1;
+  let count = 0;
   function counter() {
-    if (count >= max_value) {
-      count = 0 - 1;
+    if (count > max_value) {
+      count = 0;
     } 
-    return ++count;
+    return count++;
   }
   return counter;
 }
